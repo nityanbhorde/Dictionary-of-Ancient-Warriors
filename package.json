@@ -1,0 +1,20 @@
+{
+  "name": "dictionary-warriors",
+  "version": "1.0.0",
+  "description": "A collection of ancient warriors from the past",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dictionary",
+    "warriors"
+  ],
+  "author": "Nityan Bhorde",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4"
+  }
+}
