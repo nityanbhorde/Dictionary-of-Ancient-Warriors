@@ -15,6 +15,17 @@ let warriors = [
 	{
 		term:"Leonidas of Sparta",
 		definition:"One of the two kings of Sparta during the Greco-Persian wars; rumor has it he was the last Spartan standing against thousands of Persians at the battle of Thermopylae."
+	},
+	{
+		term:"Julius Caeser",
+		definition:"Arguably the most famous Roman general who led Rome's army to many victories, allowing the flourishing city to expand"
+	},
+	{	term: "Miyamoto Musashi",
+		definition:"A skillfull japanese swordsman that had no lord or master; he is now considered the greatest swordsman to have ever lived"
+	},
+	{
+		term:"Richard the Lionhart",
+		definition:" A king of England known for his exploits during the Third crusades, whose courage and daring knew no bounds"
 	}
 
 ];
