@@ -1,5 +1,6 @@
 let express = require("express");
 let cors = require("cors");
+let bodyParser = require("body-parser");
 let app = express();
 
 let warriors = [
@@ -17,8 +18,10 @@ let warriors = [
 	}
 
 ];
+app.use(bodyParser.json()); // parse posted data
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(function(req,res,next){
-	console.log(`${req.method} request for ${req.url}`); //logs request methods
+	console.log(`${req.method} request for ${req.url} - ${JSON.stringify(req.body)}`); //logs request methods
 	next();
 });
 
@@ -27,6 +30,18 @@ app.use(cors()); // any domain can now make a request for dictionary-api
 
 app.get("/dictionary-api",function(req,res){
 	res.json(warriors);
+});
+app.post("/dictionary-api",function(req,res){
+	warriors.push(req.body);
+	res.json(warriors);
+});
+
+app.delete("/dictionary-api/:term",function(req,res){
+	warriors = warriors.filter(function(deleted){
+		return deleted.term.toLowerCase() !== req.params.term.toLowerCase(); // keep the term if its not the term to be to deleted
+		res.json(warriors);
+		
+	})
 });
 app.listen(3000);
 
